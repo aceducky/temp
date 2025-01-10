@@ -2,7 +2,8 @@
 //Build (dist folder content) can directly be used for github pages hosting
 
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
+//import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react'
 
 const buildTimestamp = (() => {
   //Example: 05_12_2024_at_09-10

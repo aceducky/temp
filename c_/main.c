@@ -349,6 +349,28 @@ char *my_strstr(const char *haystack, const char *needle) {
 
     return NULL; // No match found
 }
+
+
+char* longestCommonPrefix(char arr[][100], int n) {
+    static char prefix[100]; // static so it can be returned
+    int i, j;
+
+    // Start with the first string as the prefix
+    strcpy(prefix, arr[0]);
+
+    // Compare with each string
+    for (i = 1; i < n; i++) {
+        j = 0;
+        // Compare characters until they differ
+        while (prefix[j] && arr[i][j] && prefix[j] == arr[i][j]) {
+            j++;
+        }
+        prefix[j] = '\0'; // Cut the prefix here
+    }
+
+    return prefix;
+}
+
 int main()
 {
     // int n;
@@ -399,4 +421,5 @@ int main()
 
     return 0;
 }
+
 

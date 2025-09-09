@@ -328,7 +328,27 @@ void hashMappingSum(int *arr, int n, int target)
         hash[arr[i]]++;
     }
 }
+char *my_strstr(const char *haystack, const char *needle) {
+    if (!*needle) {
+        return (char *)haystack; // Empty needle matches at the beginning
+    }
 
+    for (const char *p = haystack; *p != '\0'; p++) {
+        const char *h = p;
+        const char *n = needle;
+
+        while (*h && *n && (*h == *n)) {
+            h++;
+            n++;
+        }
+
+        if (*n == '\0') {
+            return (char *)p; // Found full match
+        }
+    }
+
+    return NULL; // No match found
+}
 int main()
 {
     // int n;
@@ -379,3 +399,4 @@ int main()
 
     return 0;
 }
+
